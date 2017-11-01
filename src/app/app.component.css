@@ -1,0 +1,11 @@
+#home-heading {
+    position: relative;
+    min-height: 1000px;
+    width:100%;
+    background: url("img/lights.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: center;
+
+
+}

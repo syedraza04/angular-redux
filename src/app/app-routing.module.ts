@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { HomeComponent } from './core/home/home.component';
+import {ResumeComponent} from "./core/resume/resume.component";
+import {WorkComponent} from "./core/work/work.component";
+import {ContactComponent} from "./core/contact/contact.component";
+import {LandingPageComponent} from "./core/landing-page/landing-page.component";
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule'},
-  { path: 'shopping-list', component: ShoppingListComponent }
+  { path:'', component: LandingPageComponent},
+  { path: 'home',    component: HomeComponent },
+  { path: 'resume',  component: ResumeComponent },
+  { path: 'work',    component: WorkComponent },
+  { path: 'contact', component: ContactComponent }
 ];
 
 @NgModule({

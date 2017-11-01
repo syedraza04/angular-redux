@@ -6,14 +6,25 @@ import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
 
-
 import { AuthInterceptor } from '../shared/auth.interceptor';
 import { LoggingInterceptor } from '../shared/logging.interceptor';
+import { ResumeComponent } from './resume/resume.component';
+import { WorkComponent } from './work/work.component';
+import { ContactComponent } from './contact/contact.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import {FooterComponent} from "./footer/footer.component";
+import {PortfolioHeaderComponent} from "./portfolio-header/portfolio-header.component";
+import {EventsService} from "./services/eventsService";
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    HomeComponent
+    ResumeComponent,
+    WorkComponent,
+    ContactComponent,
+
+    HomeComponent,
+
   ],
   imports: [
     SharedModule,
@@ -25,7 +36,8 @@ import { LoggingInterceptor } from '../shared/logging.interceptor';
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true},
+      EventsService
   ]
 })
 export class CoreModule {}
